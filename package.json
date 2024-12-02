@@ -5,7 +5,7 @@
   "keywords": [],
   "license": "BSD-3-Clause",
   "engines": {
-    "node": ">=20.16.0",
+    "node": ">=21.0.0",
     "npm": ">=10.8.1"
   },
   "homepage": "https://github.com/keldaanCommunity/pokemonAutoChess#readme",
@@ -17,7 +17,10 @@
     "url": "https://github.com/keldaanCommunity/pokemonAutoChess/issues"
   },
   "author": "keldaan-ag",
-  "contributors": ["ogus", "sylvainpolletvillard"],
+  "contributors": [
+    "ogus",
+    "sylvainpolletvillard"
+  ],
   "main": "public/dist/server/app/index.js",
   "scripts": {
     "reset": "rimraf -rf node_modules/",
@@ -37,7 +40,8 @@
     "assetpack": "cd edit/assetpack && npm run assetpack",
     "precompute": "cd gen && ts-node precompute-all.ts",
     "colyseus-post-deploy": "npx colyseus-post-deploy",
-    "deploy-live": "pm2 deploy production update"
+    "deploy-live": "pm2 deploy production update",
+    "test": "node --test --require ts-node/register 'app/**/*.test.ts'"
   },
   "dependencies": {
     "@colyseus/command": "^0.3.1",
